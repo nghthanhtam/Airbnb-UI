@@ -1,4 +1,4 @@
-# Airbnb
+# Hogo - Airbnb Clone UI
 This app is Hogo - Airbnb clone UI
 
 #Getting started
