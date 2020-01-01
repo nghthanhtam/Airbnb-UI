@@ -103,6 +103,7 @@ class HomeDetail extends Component {
                         <Text style={{ color: 'white', fontSize: 18 }}>Request to booking</Text>
                     </TouchableHighlight>
                 </View>
+
             </View >
         );
     }
