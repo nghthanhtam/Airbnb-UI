@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableHighlight, CheckBox, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight, CheckBox, ScrollView, Modal } from 'react-native';
 import DatePicker from 'react-native-datepicker';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Slider } from 'react-native-elements';
@@ -15,7 +15,8 @@ class DropdownBox extends Component {
             checked2: false,
             checked3: false,
             value: 0,
-            valueMax: 0
+            valueMax: 0,
+            modalVisible: true
         }
     }
 
@@ -32,16 +33,50 @@ class DropdownBox extends Component {
             if (count3 > 0) this.setState({ ['count' + name]: this.state.count3 - 1 });
         }
     }
-
+    setModalVisible(visible) {
+        this.setState({ modalVisible: visible });
+    }
     onCheckBoxPress = (e) => {
         this.setState({ [e.target.name]: !e.target.value.checked1 });
     }
 
+    // render() {
+    //     return (
+    //         <View style={{ marginTop: 22 }}>
+    //             <Modal
+    //                 animationType="slide"
+    //                 transparent={false}
+    //                 visible={this.state.modalVisible}
+    //                 onRequestClose={() => {
+    //                     alert('Modal has been closed.');
+    //                 }}>
+    //                 <View style={{ marginTop: 22 }}>
+    //                     <View>
+    //                         <Text>Hello World!</Text>
+
+    //                         <TouchableHighlight
+    //                             onPress={() => {
+    //                                 this.setModalVisible(!this.state.modalVisible);
+    //                             }}>
+    //                             <Text>Hide Modal</Text>
+    //                         </TouchableHighlight>
+    //                     </View>
+    //                 </View>
+    //             </Modal>
+    //             <TouchableHighlight
+    //                 onPress={() => {
+    //                     this.setModalVisible(true);
+    //                 }}>
+    //                 <Text>Show Modal</Text>
+    //             </TouchableHighlight>
+    //         </View>
+    //     );
+    // }
     render() {
         const { name, marginLeft } = this.props;
         const { count1, count2, count3, checked1, checked2, checked3 } = this.state;
         return (
-            <View style={[styles.filterBox, { marginLeft: marginLeft }]}>
+            <View style={[styles.dropdownBox, { marginLeft: marginLeft }]}>
                 {name === 'Dates' ? (
                     <View>
                         <View style={{ paddingBottom: 10 }}>
@@ -245,7 +280,7 @@ class DropdownBox extends Component {
 
                 {
                     name === 'Filters' ? (
-                        <ScrollView style={{ flexDirection: "column" }}>
+                        <ScrollView style={{ flexDirection: "column", height: "30%" }}>
                             <Text style={{ fontWeight: '700' }}>Rooms and beds </Text>
                             <View style={{ flexDirection: "row", paddingTop: 5 }}>
                                 <Text style={{ width: "45%", paddingLeft: 5 }}>Beds </Text>
@@ -360,7 +395,7 @@ const styles = StyleSheet.create({
         fontWeight: '700',
         fontSize: 13
     },
-    filterBox: {
+    dropdownBox: {
         justifyContent: 'space-between',
         minHeight: 150,
         minWidth: 190,
@@ -369,7 +404,6 @@ const styles = StyleSheet.create({
         borderColor: '#dddddd',
         borderWidth: 1,
         borderRadius: 2,
-        //justifyContent: 'center',
     },
     icon: {
         marginRight: 0,

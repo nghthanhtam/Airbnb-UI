@@ -17,9 +17,15 @@
     "react-native-MultiSlider": "^0.2.1",
     "react-native-datepicker": "^1.7.2",
     "react-native-elements": "^1.2.7",
+    "react-native-gesture-handler": "^1.5.3",
+    "react-native-maps": "0.26.1",
     "react-native-multi-slider": "^0.3.6",
+    "react-native-reanimated": "^1.4.0",
+    "react-native-screens": "^2.0.0-alpha.22",
     "react-native-web": "~0.11.7",
-    "react-navigation": "2.0.4"
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.10.3",
+    "react-navigation-tabs": "^2.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

@@ -13,15 +13,12 @@ class FilterBox extends Component {
     render() {
 
         return (
-            <TouchableHighlight underlayColor='#4aa197'
+            <TouchableHighlight underlayColor='grey'
                 onPress={this.props.onPress}>
-
                 <View style={styles.filterBox}>
                     <Text style={styles.text}> {this.props.name} </Text>
                 </View>
-
             </TouchableHighlight>
-
         );
     }
 }
