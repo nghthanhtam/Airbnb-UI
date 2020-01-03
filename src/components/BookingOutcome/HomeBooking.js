@@ -1,13 +1,30 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, Dimensions, TouchableHighlight, TextInput, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ConfirmBooking from './ConfirmBooking';
+import Home from '../SearchOutcome/Home';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 const { height, width } = Dimensions.get('window')
 
 class HomeBooking extends Component {
     render() {
         return (
             <View style={styles.container}>
+
                 <ScrollView scrollEventThrottle={16} showsVerticalScrollIndicator={false}>
+                    <View style={{ flex: 1, }}>
+                        <TouchableHighlight underlayColor='white'
+                            onPress={() => this.props.navigation.navigation('Home')}
+                            style={{ height: 70, backgroundColor: 'white' }}>
+                            <Icon
+                                style={{ padding: 20 }}
+                                name="long-arrow-left"
+                                color='black'
+                                size={25}
+                            />
+                        </TouchableHighlight>
+                    </View>
                     <View style={{ padding: 15, flexDirection: 'column' }}>
                         <Text style={{ fontSize: 20, paddingBottom: 30 }}>Things to keep in mind</Text>
                         <View style={{ flexDirection: 'row', flex: 1, paddingBottom: 20 }}>
@@ -66,22 +83,15 @@ class HomeBooking extends Component {
 
                         <TextInput style={styles.phoneInput}
                             placeholder="Your phone number...">
-
                         </TextInput>
                     </View>
 
-                    {/* <View style={styles.checkoutButton}>
-                        <TouchableHighlight underlayColor='grey'
-                            onPress={this.onPress}>
-                            <Text style={{ color: 'white', textAlign: 'center', fontSize: 15 }}>Checkout</Text>
-                        </TouchableHighlight >
-                    </View> */}
                 </ScrollView>
                 <View alignItems='center' >
                     <TouchableHighlight
                         textAlign='center'
                         underlayColor='grey'
-                        onPress={() => this.props.navigation.navigate('HomeBooking')}
+                        onPress={() => this.props.navigation.navigate('ConfirmBooking')}
                         style={{ height: 30, width: width - 30, borderRadius: 5, alignItems: 'center', backgroundColor: '#FF5A60' }}>
                         <Text style={{ color: 'white', fontSize: 18 }}>Confirm</Text>
                     </TouchableHighlight>
@@ -91,7 +101,7 @@ class HomeBooking extends Component {
     }
 }
 
-export default HomeBooking;
+//export default HomeBooking;
 
 const styles = StyleSheet.create({
     container: {
@@ -147,3 +157,38 @@ const styles = StyleSheet.create({
     }
 });
 
+const RootStack = createStackNavigator(
+    {
+        Home: {
+            screen: Home,
+            navigationOptions: {
+                header: null,
+                footer: null
+            }
+        },
+        HomeBooking: {
+            screen: HomeBooking,
+            navigationOptions: {
+                header: null,
+                footer: null
+            }
+        },
+        ConfirmBooking: {
+            screen: ConfirmBooking,
+            navigationOptions: {
+                header: null,
+                footer: null
+            }
+        },
+    },
+    {
+        initialRouteName: 'HomeBooking',
+    }
+);
+
+const AppContainer = createAppContainer(RootStack);
+export default class App extends React.Component {
+    render() {
+        return <AppContainer />;
+    }
+}

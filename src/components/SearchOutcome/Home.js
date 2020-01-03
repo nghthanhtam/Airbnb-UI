@@ -180,6 +180,9 @@ const RootStack = createStackNavigator(
         },
         HomeDetail: {
             screen: HomeDetail,
+            navigationOptions: {
+                header: null,
+            }
         },
     },
     {

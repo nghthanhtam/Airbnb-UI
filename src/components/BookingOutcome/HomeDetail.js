@@ -16,6 +16,7 @@ class HomeDetail extends Component {
     render() {
         return (
             <View style={styles.container}>
+
                 <ScrollView scrollEventThrottle={20} alignItems='center' showsVerticalScrollIndicator={false}>
                     <View style={{ width: width, height: 180 }}>
                         <Image
