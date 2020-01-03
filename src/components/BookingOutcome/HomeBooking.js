@@ -7,23 +7,24 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 const { height, width } = Dimensions.get('window')
 
-class HomeBooking extends Component {
+class HomeBooking extends React.Component {
     render() {
         return (
             <View style={styles.container}>
 
                 <ScrollView scrollEventThrottle={16} showsVerticalScrollIndicator={false}>
                     <View style={{ flex: 1, }}>
-                        <TouchableHighlight underlayColor='white'
+                        <Text style={{ padding: 15 }} >Step1/3</Text>
+                        {/* <TouchableHighlight underlayColor='white'
                             onPress={() => this.props.navigation.navigation('Home')}
-                            style={{ height: 70, backgroundColor: 'white' }}>
+                            style={{ height: 60, backgroundColor: 'white' }}>
                             <Icon
                                 style={{ padding: 20 }}
                                 name="long-arrow-left"
                                 color='black'
                                 size={25}
                             />
-                        </TouchableHighlight>
+                        </TouchableHighlight> */}
                     </View>
                     <View style={{ padding: 15, flexDirection: 'column' }}>
                         <Text style={{ fontSize: 20, paddingBottom: 30 }}>Things to keep in mind</Text>
@@ -159,13 +160,6 @@ const styles = StyleSheet.create({
 
 const RootStack = createStackNavigator(
     {
-        Home: {
-            screen: Home,
-            navigationOptions: {
-                header: null,
-                footer: null
-            }
-        },
         HomeBooking: {
             screen: HomeBooking,
             navigationOptions: {
@@ -173,6 +167,13 @@ const RootStack = createStackNavigator(
                 footer: null
             }
         },
+        // Home: {
+        //     screen: Home,
+        //     navigationOptions: {
+        //         header: null,
+        //         footer: null
+        //     }
+        // },
         ConfirmBooking: {
             screen: ConfirmBooking,
             navigationOptions: {

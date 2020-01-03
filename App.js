@@ -7,7 +7,7 @@ import Saved from './src/components/Saved'
 import Profile from './src/components/Profile'
 import Home from './src/components/SearchOutcome/Home'
 import Icon from 'react-native-vector-icons/Ionicons'
-import HomeDetail from './src/components/BookingOutcome/HomeDetail'
+import Inbox from './src/components/Inbox'
 
 const MainNavigator = createBottomTabNavigator({
   Home: {
@@ -28,6 +28,15 @@ const MainNavigator = createBottomTabNavigator({
       )
     }
   },
+  Inbox: {
+    screen: Inbox,
+    navigationOptions: {
+      tabBarLabel: 'INBOX',
+      tabBarIcon: ({ tintColor }) => (
+        <Icon name="md-mail" size={24} color={tintColor} />
+      )
+    }
+  },
   Profile: {
     screen: Profile,
     navigationOptions: {
@@ -43,46 +52,7 @@ const App = createAppContainer(MainNavigator);
 
 export default App;
 
-// export default createBottomTabNavigator({
-//   Home: {
-//     screen: Home,
-//     navigationOptions: {
-//       tabBarLabel: 'HOME',
-//       tabBarIcon: ({ tintColor }) => (
-//         <Icon name="md-home" size={24} color={tintColor} />
-//       )
-//     }
-//   },
-//   Saved: {
-//     screen: Saved,
-//     navigationOptions: {
-//       tabBarLabel: 'SAVED',
-//       tabBarIcon: ({ tintColor }) => (
-//         <Icon name="md-heart-half" size={24} color={tintColor} />
-//       )
-//     }
-//   },
-//   Profile: {
-//     screen: Profile,
-//     navigationOptions: {
-//       tabBarLabel: 'PROFILE',
-//       tabBarIcon: ({ tintColor }) => (
-//         <Icon name="md-person" size={24} color={tintColor} />
-//       )
-//     }
-//   },
 
-// }, {
-//   tabBarOptions: {
-//     activeTintColor: '#FF5A60',
-//     inactiveTintColor: 'grey',
-//     style: {
-//       backgroundColor: 'white',
-//       borderTopWidth: 0,
-
-//     }
-//   }
-// })
 
 const styles = StyleSheet.create({
   container: {

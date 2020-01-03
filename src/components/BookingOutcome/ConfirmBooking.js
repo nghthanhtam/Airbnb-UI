@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Loader from '../Loader';
 const { height, width } = Dimensions.get('window')
 
-class ConfirmBooking extends Component {
+class ConfirmBooking extends React.Component {
     constructor(props) {
         super(props)
         this.state = { isLoading: false }

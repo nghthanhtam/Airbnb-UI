@@ -9,14 +9,13 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 const { height, width } = Dimensions.get('window')
 
-class HomeDetail extends Component {
+class HomeDetail extends React.Component {
     onPress = () => {
         alert('d')
     }
     render() {
         return (
             <View style={styles.container}>
-
                 <ScrollView scrollEventThrottle={20} alignItems='center' showsVerticalScrollIndicator={false}>
                     <View style={{ width: width, height: 180 }}>
                         <Image
