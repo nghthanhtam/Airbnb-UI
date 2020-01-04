@@ -187,6 +187,7 @@ const RootStack = createStackNavigator(
     }
 );
 
+
 const AppContainer = createAppContainer(RootStack);
 export default class App extends React.Component {
     render() {

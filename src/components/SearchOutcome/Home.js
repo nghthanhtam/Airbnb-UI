@@ -8,14 +8,14 @@ import DropdownBox from './DropdowBox';
 import Country from './Country'
 import Hotel from './Hotel'
 import HomeDetail from './../BookingOutcome/HomeDetail'
+import HomeBooking from '../BookingOutcome/HomeBooking'
+import ConfirmBooking from '../BookingOutcome/ConfirmBooking'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
-
 import { YellowBox } from 'react-native';
-
 
 class Home extends React.Component {
     constructor(props) {
@@ -167,7 +167,6 @@ const styles = StyleSheet.create({
         fontWeight: '700',
         fontSize: 12
     }
-
 });
 
 const RootStack = createStackNavigator(
