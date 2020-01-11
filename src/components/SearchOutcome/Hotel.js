@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Button, View, Text, Dimensions, Image, TouchableHighlight } from 'react-native';
+import { View, Text, Dimensions, Image, TouchableHighlight } from 'react-native';
 
-const { height, width } = Dimensions.get('window')
+const { width } = Dimensions.get('window')
 class Hotel extends React.Component {
     render() {
         return (

@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, ScrollView, Dimensions, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-const { height, width } = Dimensions.get('window')
+
+const { height, width } = Dimensions.get('window');
 
 class UserDetail extends React.Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class UserDetail extends React.Component {
             isReview: false
         }
     }
+
     onPress = () => {
         const { isReadMore } = this.state;
         if (isReadMore) this.setState({ isReadMore: false });
@@ -27,8 +29,8 @@ class UserDetail extends React.Component {
             <ScrollView scrollEventThrottle={20} alignItems='center' showsVerticalScrollIndicator={false}>
                 <View style={{ flexDirection: 'column', paddingLeft: 20, paddingRight: 20, }}>
                     <View style={{ paddingTop: 30, flexDirection: 'row' }}>
-                        <View style={{ flexDirection: 'column', width: 150 }}>
-                            <Text style={{ fontSize: 25, }}>Hi, I'm Maxie</Text>
+                        <View style={{ flexDirection: 'column', width: 160 }}>
+                            <Text style={{ fontSize: 25, }}>Hi, I'm Sam </Text>
                             <Text style={{ fontSize: 16, }}>Joined in May, 2018</Text>
                             <View style={{ paddingTop: 20, flexDirection: 'row' }}>
                                 <Icon name="edit"
@@ -71,7 +73,11 @@ class UserDetail extends React.Component {
                         />
                     </View>
                     <Text style={{ fontSize: 20, fontWeight: '700', paddingTop: 20 }}>2 reviews</Text>
-                    <Text style={{ color: '#018F84', fontSize: 17, textDecorationLine: 'underline', paddingTop: 15, paddingBottom: 20 }}>From hosts</Text>
+                    <Text style={{
+                        color: '#018F84', fontSize: 17, textDecorationLine: 'underline',
+                        paddingTop: 15, paddingBottom: 20
+                    }}>From hosts
+                    </Text>
                     <View style={{ flex: 2, flexDirection: 'row', paddingBottom: 20 }}>
                         <TouchableHighlight underlayColor='#ff7479' style={styles.buttonReview} >
                             <Icon name="user"
@@ -139,6 +145,9 @@ class UserDetail extends React.Component {
                         )
                     }
 
+
+
+
                     <View style={{ alignItems: 'center' }}>
                         <View
                             style={{
@@ -198,8 +207,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 80,
-        width: 100,
-        height: 100,
+        width: 95,
+        height: 95,
         backgroundColor: '#ffa7aa',
         marginLeft: width - 280,
     },

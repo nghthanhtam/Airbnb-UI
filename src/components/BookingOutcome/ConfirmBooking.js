@@ -17,7 +17,7 @@ class ConfirmBooking extends React.Component {
                 this.props.navigation.navigate('Home');
                 this.setState({ isLoading: false })
             }.bind(this),
-            2500
+            5000
         );
     }
     render() {
@@ -80,12 +80,12 @@ class ConfirmBooking extends React.Component {
                         placeholder="Your code...">
                     </TextInput>
                 </View>
-                <View style={{ flexDirection: 'row', }}>
+                <View style={{ flexDirection: 'row', marginBottom: 70 }}>
                     <Text style={{ fontSize: 18, fontWeight: '700', paddingLeft: 20, flex: 1 }}>Total (USD)</Text>
                     <Text style={{ fontSize: 18, fontWeight: '700', paddingRight: 20, }}>$108</Text>
                 </View>
 
-                <View style={{ padding: 20, flexDirection: 'row' }} >
+                {/* <View style={{ padding: 20, flexDirection: 'row' }} >
                     <TouchableHighlight
                         style={{ height: 30, width: 30, borderRadius: 5, alignItems: 'center', backgroundColor: '#e5e5e5' }}>
                         <Text style={{ color: 'grey', fontSize: 18 }}>+</Text>
@@ -95,7 +95,7 @@ class ConfirmBooking extends React.Component {
                         color='grey'
                         size={25}
                     />
-                </View>
+                </View> */}
                 <View alignItems='center' >
                     <TouchableHighlight
                         textAlign='center'
@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
         width: 150,
         borderColor: '#bfbfbf',
         borderWidth: 1,
-        marginLeft: 5
+        marginLeft: 5,
+        paddingLeft: 5
     },
 });

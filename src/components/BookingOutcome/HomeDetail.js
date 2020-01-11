@@ -14,6 +14,7 @@ class HomeDetail extends React.Component {
         alert('d')
     }
     render() {
+        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
                 <ScrollView scrollEventThrottle={20} alignItems='center' showsVerticalScrollIndicator={false}>
@@ -98,7 +99,7 @@ class HomeDetail extends React.Component {
                 </ScrollView>
                 <View alignItems='center'>
                     <TouchableHighlight underlayColor='grey'
-                        onPress={() => this.props.navigation.navigate('HomeBooking')}
+                        onPress={() => navigate('HomeBooking')}
                         style={{ height: 30, width: width - 30, borderRadius: 5, alignItems: 'center', backgroundColor: '#FF5A60' }}>
                         <Text style={{ color: 'white', fontSize: 18 }}>Request to booking</Text>
                     </TouchableHighlight>
@@ -109,7 +110,7 @@ class HomeDetail extends React.Component {
     }
 }
 
-//export default HomeDetail;
+export default HomeDetail;
 
 const styles = StyleSheet.create({
     container: {
@@ -133,31 +134,31 @@ const styles = StyleSheet.create({
     },
 });
 
-const RootStack = createStackNavigator(
-    {
-        HomeDetail: {
-            screen: HomeDetail,
-            navigationOptions: {
-                header: null,
-                footer: null
-            }
-        },
-        HomeBooking: {
-            screen: HomeBooking,
-            navigationOptions: {
-                header: null,
-                footer: null
-            }
-        },
-    },
-    {
-        initialRouteName: 'HomeDetail',
-    }
-);
+// const RootStack = createStackNavigator(
+//     {
+//         HomeDetail: {
+//             screen: HomeDetail,
+//             navigationOptions: {
+//                 header: null,
+//                 footer: null
+//             }
+//         },
+//         HomeBooking: {
+//             screen: HomeBooking,
+//             navigationOptions: {
+//                 header: null,
+//                 footer: null
+//             }
+//         },
+//     },
+//     {
+//         initialRouteName: 'HomeDetail',
+//     }
+// );
 
-const AppContainer = createAppContainer(RootStack);
-export default class App extends React.Component {
-    render() {
-        return <AppContainer />;
-    }
-}
+// const AppContainer = createAppContainer(RootStack);
+// export default class App extends React.Component {
+//     render() {
+//         return <AppContainer />;
+//     }
+// }

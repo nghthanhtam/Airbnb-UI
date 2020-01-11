@@ -41,6 +41,8 @@ class Step3Host extends Component {
             checked, checked1, checked2, checked3,
             count1, count2, count3
         } = this.state;
+        const { navigate } = this.props.navigation;
+
         return (
             <View style={{ flexDirection: 'column', paddingBottom: 20, }}>
                 <View
@@ -95,7 +97,7 @@ class Step3Host extends Component {
                             </View>
                         </View>
 
-                        <Text style={{ padding: 10, fontSize: 17 }}>When can guests check in?</Text>
+                        <Text style={{ padding: 10, fontSize: 21 }}>When can guests check in?</Text>
                         <View flexDirection="column" style={{ paddingLeft: 10 }}>
                             <View style={{ paddingBottom: 5 }}>
                                 <DatePicker
@@ -137,7 +139,6 @@ class Step3Host extends Component {
                         </View>
 
 
-
                         <Text style={{ padding: 10, marginTop: 10, fontSize: 21 }}>Minimum price</Text>
                         <TextInput style={styles.textInput1}
                             placeholder="$ 0">
@@ -149,9 +150,9 @@ class Step3Host extends Component {
                                 <TouchableHighlight
                                     textAlign='center'
                                     underlayColor='grey'
-                                    onPress={this.props.onPressNext}
+                                    onPress={() => navigate('Profile')}
                                     style={{ height: 30, width: width - 40, borderRadius: 5, alignItems: 'center', backgroundColor: '#FF5A60' }}>
-                                    <Text style={{ color: 'white', fontSize: 18 }}>Next</Text>
+                                    <Text style={{ color: 'white', fontSize: 18 }}>Confirm</Text>
                                 </TouchableHighlight>
                             </View>
                         </View>

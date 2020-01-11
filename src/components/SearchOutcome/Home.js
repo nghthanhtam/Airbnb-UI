@@ -3,14 +3,16 @@ import {
     StyleSheet, Text, View, SafeAreaView, TextInput, Animated,
     ScrollView, Image, TouchableHighlight, Dimensions
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import FilterBox from './FilterBox'
 import DropdownBox from './DropdowBox';
 import Country from './Country'
 import Hotel from './Hotel'
 import HomeDetail from './../BookingOutcome/HomeDetail'
 import HomeBooking from '../BookingOutcome/HomeBooking'
+import HomeBooking1 from '../BookingOutcome/HomeBooking1'
 import ConfirmBooking from '../BookingOutcome/ConfirmBooking'
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
@@ -33,7 +35,7 @@ class Home extends React.Component {
         if (this.state.dropdowBox === false) {
             this.setState({ dropdowBox: true })
             this.setState({ name: name })
-            this.setState({ height: 240 })
+            this.setState({ height: 280 })
         } else {
             this.setState({ dropdowBox: false })
             this.setState({ height: 125 })
@@ -85,21 +87,21 @@ class Home extends React.Component {
                     <View style={{ flex: 1, paddingTop: 20 }}>
                         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                             <Country
-                                imageUri={require('../../../assets/home1.jpg')}
-                                name="Noma Hotel" />
+                                imageUri={require('../../../assets/vietnam.jpg')}
+                                name="Viet Nam" />
                             <Country
-                                imageUri={require('../../../assets/home2.jpg')}
-                                name="Noma Hotel" />
+                                imageUri={require('../../../assets/japan.jpg')}
+                                name="Japan" />
                             <Country
-                                imageUri={require('../../../assets/home3.jpg')}
-                                name="Noma Hotel" />
+                                imageUri={require('../../../assets/sing.jpg')}
+                                name="Singapore" />
                             <Country
-                                imageUri={require('../../../assets/home4.jpeg')}
-                                name="Noma Hotel" />
+                                imageUri={require('../../../assets/thai.jpg')}
+                                name="Thailand" />
                         </ScrollView>
                     </View>
                     <View style={{ flex: 1, paddingTop: 30 }}>
-                        <Text style={{ fontSize: 22, fontWeight: '600', paddingHorizontal: 14 }}>Travel around the world</Text>
+                        <Text style={{ fontSize: 22, fontWeight: '600', paddingHorizontal: 14 }}>Pick your home</Text>
                     </View>
                     <View style={{ flex: 1, paddingTop: 20 }}>
                         <Hotel
@@ -180,7 +182,26 @@ const RootStack = createStackNavigator(
         HomeDetail: {
             screen: HomeDetail,
             navigationOptions: {
-                header: null,
+
+            }
+        },
+
+        HomeBooking: {
+            screen: HomeBooking,
+            navigationOptions: {
+
+            }
+        },
+        HomeBooking1: {
+            screen: HomeBooking1,
+            navigationOptions: {
+
+            }
+        },
+        ConfirmBooking: {
+            screen: ConfirmBooking,
+            navigationOptions: {
+
             }
         },
     },

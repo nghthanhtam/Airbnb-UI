@@ -14,11 +14,15 @@ export default class Loader extends Component {
                 visible={true}>
                 <View style={styles.wrapper}>
                     <View style={styles.loaderContainer}>
-                        <Image style={styles.loaderImage}
+                        <Image
+                            style={styles.loaderImage}
                             source={require('../img/done.gif')} />
+                        <View styles={{ width: 200, height: 100, paddingLeft: 50, backgroundColor: 'grey' }}>
+                            <Text styles={{ marginLeft: 100, fontsize: 30 }}>Your booking order is: #01df55 </Text>
+                        </View>
                     </View>
-
                 </View>
+
             </Modal >
 
         )
@@ -41,17 +45,18 @@ const styles = StyleSheet.create({
         borderRadius: 15
     },
     loaderContainer: {
-        width: 90,
-        height: 90,
+        width: 200,
+        height: 150,
         backgroundColor: colors.white,
         borderRadius: 15,
         position: 'absolute',
-        left: '50%',
+        left: '40%',
         top: '50%',
-        marginLeft: - 45,
+        marginLeft: -45,
         marginTop: -45,
     },
     loaderImage: {
+        marginLeft: 50,
         width: 90,
         height: 90,
         borderRadius: 15,

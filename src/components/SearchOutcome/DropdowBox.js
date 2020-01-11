@@ -365,7 +365,7 @@ const styles = StyleSheet.create({
         fontSize: 13
     },
     dropdownBox: {
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         minHeight: 150,
         minWidth: 190,
         padding: 10,
